@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SaloonSave</title>
+
+<link rel="stylesheet" href="agenda.css">
+
+</head>
+
+<body>
+
+<div class="app-container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo-container">
+
+<div class="logo-icon">✂</div>
+
+<div class="logo-text">
+<h2>SaloonSave</h2>
+<p>Sistema de Gestão</p>
+</div>
+
+</div>
+
+<ul class="menu">
+
+<li class="active">Agenda</li>
+<li>Dashboard</li>
+<li>Clientes</li>
+<li>Serviços</li>
+<li>Profissionais</li>
+<li>Estoque</li>
+<li>Financeiro</li>
+
+</ul>
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div class="dashboard">
+
+<div class="top">
+
+<h1>Agenda</h1>
+
+<button class="btn" onclick="abrirModal()">
++ Novo Agendamento
+</button>
+
+</div>
+
+
+<!-- DIAS -->
+
+<div class="semana">
+
+<div class="dia">SEG<br><span>2</span></div>
+<div class="dia ativo">TER<br><span>3</span></div>
+<div class="dia">QUA<br><span>4</span></div>
+<div class="dia">QUI<br><span>5</span></div>
+<div class="dia">SEX<br><span>6</span></div>
+<div class="dia">SAB<br><span>7</span></div>
+<div class="dia">DOM<br><span>8</span></div>
+
+</div>
+
+
+<!-- AGENDA -->
+
+<div class="agenda">
+
+<h3>terça-feira, 3 de março</h3>
+
+<div class="vazio">
+
+<p>Nenhum agendamento para este dia</p>
+
+<button class="btn" onclick="abrirModal()">+ Agendar</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div class="modal-bg" id="modal">
+
+<div class="modal">
+
+<div class="modal-top">
+
+<h2>📅 Novo Agendamento</h2>
+
+<span class="fechar" onclick="fecharModal()">✕</span>
+
+</div>
+
+
+<label>Cliente</label>
+<input type="text" placeholder="Nome do cliente">
+
+
+<label>Serviço</label>
+<select>
+<option>Selecione o serviço</option>
+<option>Corte</option>
+<option>Barba</option>
+</select>
+
+
+<label>Profissional</label>
+<select>
+<option>Selecione o profissional</option>
+<option>João</option>
+<option>Carlos</option>
+</select>
+
+
+<div class="linha">
+
+<div>
+<label>Data</label>
+<input type="date">
+</div>
+
+<div>
+<label>Horário</label>
+<input type="time">
+</div>
+
+</div>
+
+
+<div class="linha">
+
+<div>
+<label>Duração (min)</label>
+<input type="number" value="30">
+</div>
+
+<div>
+<label>Preço (R$)</label>
+<input type="number" value="0">
+</div>
+
+</div>
+
+
+<label>Observações</label>
+
+<textarea placeholder="Observações sobre o agendamento..."></textarea>
+
+
+<button class="btn">
+Salvar Agendamento
+</button>
+
+</div>
+
+</div>
+
+
+<script src="agenda.js"></script>
+
+</body>
+</html>
