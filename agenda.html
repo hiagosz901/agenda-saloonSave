@@ -8,172 +8,160 @@
 <title>SaloonSave</title>
 
 <link rel="stylesheet" href="agenda.css">
-
 </head>
 
 <body>
 
 <div class="app-container">
 
-<!-- SIDEBAR -->
+  <!-- SIDEBAR -->
+  <div class="sidebar">
 
-<div class="sidebar">
+    <div class="logo-container">
+      <div class="logo-icon">✂</div>
 
-<div class="logo-container">
+      <div class="logo-text">
+        <h2>SaloonSave</h2>
+        <p>Sistema de Gestão</p>
+      </div>
+    </div>
 
-<div class="logo-icon">✂</div>
+    <ul class="menu">
+      <li class="active">Agenda</li>
+      <li>Dashboard</li>
+      <li>Clientes</li>
+      <li>Serviços</li>
+      <li>Profissionais</li>
+      <li>Estoque</li>
+      <li>Financeiro</li>
+    </ul>
 
-<div class="logo-text">
-<h2>SaloonSave</h2>
-<p>Sistema de Gestão</p>
-</div>
+  </div>
 
-</div>
+  <!-- DASHBOARD -->
+  <div class="dashboard">
 
-<ul class="menu">
+    <div class="top">
+      <h1>Agenda</h1>
+      <button class="btn" onclick="abrirModal()">
+        + Novo Agendamento
+      </button>
+    </div>
 
-<li class="active">Agenda</li>
-<li>Dashboard</li>
-<li>Clientes</li>
-<li>Serviços</li>
-<li>Profissionais</li>
-<li>Estoque</li>
-<li>Financeiro</li>
+    <!-- DIAS -->
+    <div class="semana">
+      <div class="dia">SEG<br><span></span></div>
+      <div class="dia">TER<br><span></span></div>
+      <div class="dia">QUA<br><span></span></div>
+      <div class="dia">QUI<br><span></span></div>
+      <div class="dia">SEX<br><span></span></div>
+      <div class="dia">SAB<br><span></span></div>
+      <div class="dia">DOM<br><span></span></div>
+    </div>
 
-</ul>
+    <!-- AGENDA -->
+    <div class="agenda">
+      <h3 id="dataAtual"></h3>
 
-</div>
+      <div class="vazio"></div>
 
+      <p>Nenhum agendamento para este dia</p>
 
-<!-- DASHBOARD -->
+      <button class="btn" onclick="abrirModal()">+ Agendar</button>
+    </div>
 
-<div class="dashboard">
-
-<div class="top">
-
-<h1>Agenda</h1>
-
-<button class="btn" onclick="abrirModal()">
-+ Novo Agendamento
-</button>
-
-</div>
-
-
-<!-- DIAS -->
-
-<div class="semana">
-
-<div class="dia">SEG<br><span>2</span></div>
-<div class="dia ativo">TER<br><span>3</span></div>
-<div class="dia">QUA<br><span>4</span></div>
-<div class="dia">QUI<br><span>5</span></div>
-<div class="dia">SEX<br><span>6</span></div>
-<div class="dia">SAB<br><span>7</span></div>
-<div class="dia">DOM<br><span>8</span></div>
-
-</div>
-
-
-<!-- AGENDA -->
-
-<div class="agenda">
-
-<h3>terça-feira, 3 de março</h3>
-
-<div class="vazio">
-
-<p>Nenhum agendamento para este dia</p>
-
-<button class="btn" onclick="abrirModal()">+ Agendar</button>
+  </div>
 
 </div>
-
-</div>
-
-</div>
-
-</div>
-
 
 <!-- MODAL -->
-
 <div class="modal-bg" id="modal">
 
-<div class="modal">
+  <div class="modal">
 
-<div class="modal-top">
+    <div class="modal-top">
+      <h2>📅 Novo Agendamento</h2>
+      <span class="fechar" onclick="fecharModal()">✕</span>
+    </div>
 
-<h2>📅 Novo Agendamento</h2>
+    <label>Cliente</label>
+    <input type="text" placeholder="Nome do cliente">
 
-<span class="fechar" onclick="fecharModal()">✕</span>
+    <label>Serviço</label>
+    <select>
+      <option>Selecione o serviço</option>
+      <option>Corte</option>
+      <option>Barba</option>
+    </select>
 
-</div>
+    <label>Profissional</label>
+    <select>
+      <option>Selecione o profissional</option>
+      <option>João</option>
+      <option>Carlos</option>
+    </select>
 
+    <div class="linha">
+      <div>
+        <label>Data</label>
+        <input type="date">
+      </div>
 
-<label>Cliente</label>
-<input type="text" placeholder="Nome do cliente">
+      <div>
+        <label>Horário</label>
+        <input type="time">
+      </div>
+    </div>
 
+    <div class="linha">
+      <div>
+        <label>Duração (min)</label>
+        <input type="number" value="30">
+      </div>
 
-<label>Serviço</label>
-<select>
-<option>Selecione o serviço</option>
-<option>Corte</option>
-<option>Barba</option>
-</select>
+      <div>
+        <label>Preço (R$)</label>
+        <input type="number" value="0">
+      </div>
+    </div>
 
+    <label>Observações</label>
+    <textarea placeholder="Observações sobre o agendamento..."></textarea>
 
-<label>Profissional</label>
-<select>
-<option>Selecione o profissional</option>
-<option>João</option>
-<option>Carlos</option>
-</select>
+    <button class="btn">
+      Salvar Agendamento
+    </button>
 
-
-<div class="linha">
-
-<div>
-<label>Data</label>
-<input type="date">
-</div>
-
-<div>
-<label>Horário</label>
-<input type="time">
-</div>
-
-</div>
-
-
-<div class="linha">
-
-<div>
-<label>Duração (min)</label>
-<input type="number" value="30">
-</div>
-
-<div>
-<label>Preço (R$)</label>
-<input type="number" value="0">
-</div>
-
-</div>
-
-
-<label>Observações</label>
-
-<textarea placeholder="Observações sobre o agendamento..."></textarea>
-
-
-<button class="btn">
-Salvar Agendamento
-</button>
+  </div>
 
 </div>
 
-</div>
+<!-- SCRIPT FINAL (CORRETO) -->
+<script>
+  const dias = document.querySelectorAll(".dia");
+  const hoje = new Date().getDay();
 
+  // Ajuste porque começa em SEG
+  const index = hoje === 0 ? 6 : hoje - 1;
+  dias[index].classList.add("diaAtivo");
+
+  const data = new Date();
+
+  const diasSemana = [
+    "domingo", "segunda-feira", "terça-feira",
+    "quarta-feira", "quinta-feira", "sexta-feira", "sábado"
+  ];
+
+  const meses = [
+    "janeiro", "fevereiro", "março", "abril",
+    "maio", "junho", "julho", "agosto",
+    "setembro", "outubro", "novembro", "dezembro"
+  ];
+
+  const texto = `${diasSemana[data.getDay()]}, ${data.getDate()} de ${meses[data.getMonth()]}`;
+
+  document.getElementById("dataAtual").textContent = texto;
+</script>
 
 <script src="agenda.js"></script>
 

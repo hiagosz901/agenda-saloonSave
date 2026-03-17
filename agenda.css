@@ -125,7 +125,8 @@ transition:0.3s;
 }
 
 .dia:hover{
-box-shadow:0 5px 15px rgba(0,0,0,0.6);
+background:#a855f7;
+box-shadow:0 5px 15px rgba(104, 1, 167, 0.832);
 transform:translateY(-3px);
 }
 
@@ -134,7 +135,7 @@ font-size:22px;
 font-weight:bold;
 }
 
-.ativo{
+.diaAtivo{
 background:linear-gradient(90deg,#8a2be2,#a855f7);
 }
 

@@ -9,3 +9,4 @@ function fecharModal(){
 document.getElementById("modal").style.display = "none"
 
 }
+
